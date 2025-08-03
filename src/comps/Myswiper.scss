@@ -1,0 +1,75 @@
+.about-container {
+    display: flex;
+    max-width: 1200px; // ✅ Genişlik limiti
+    margin: 0 auto; // ✅ Ortalamak için
+    padding: 40px;
+    gap: 2rem;
+
+    .image-container {
+        flex: 1;
+        max-width: 500px; // ✅ Resmin fazla büyümesini engelle
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    }
+
+
+    .content-container {
+        flex: 2;
+        min-width: 0;
+
+        .tabs {
+            display: flex;
+            position: relative;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ccc;
+
+            button {
+                flex: 1;
+                padding: 10px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #002d72;
+
+                &.active {
+                    color: #001440;
+                }
+            }
+
+            .underline {
+                position: absolute;
+                bottom: -2px;
+                height: 3px;
+                width: 33.33%;
+                background-color: #002d72;
+                transition: transform 0.3s ease;
+            }
+        }
+
+        .swiper {
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: #002d72;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        .tabs button {
+            font-size: 1rem;
+        }
+    }
+}
